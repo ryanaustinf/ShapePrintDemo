@@ -16,13 +16,25 @@ def drawRightTriangle(height):
 	print("")
 
 def drawDiamond(height):
-	############################################################################
-	# TODO: Implement this code segment                                        #
-	############################################################################
-	pass
-	############################################################################
-	# END CODE HERE					                                           #
-	############################################################################
+	print("")
+	space = height // 2 - (0 if height % 2 == 1 else 1)
+	star = 1
+	expand = True
+	mark = True
+	for i in range(height):
+		print(" " * space + "*" * star)
+		if space == 0:
+			expand = False
+			if mark and height % 2 == 0:
+				mark = False
+				continue
+		if expand:
+			space -= 1
+			star += 2
+		else:
+			space += 1
+			star -= 2
+	print("")
 
 print("----------------------------Shape Printer----------------------------")
 while True:
