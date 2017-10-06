@@ -66,7 +66,12 @@ while True:
 		height = int(input("Enter height: "))
 		drawRightTriangle(height)
 	elif resp == 4:
-		height = int(input("Enter height: "))
+		while True:
+			height = int(input("Enter height: "))
+			if height % 2 == 0:
+				print("Height must be odd.")
+			else:
+				break
 		drawDiamond(height)
 	elif resp == 5:
 		print("Thank you for using the program.")
